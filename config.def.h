@@ -43,9 +43,9 @@ static const char delimiter[] = { ' ', ' ', ' ', DELIMITERENDCHAR };
 
 static Block blocks[] = {
 /*      pathu                           pathc                           interval        signal */
-        { PATH("sb-packages"),          NULL,                            0,             20},
-        { PATH("sb-volume"),            PATH("sb-volume_button"),        0,             10},
-        { PATH("sb-date"),              NULL,                            1,              4},
-        { PATH("sb-clock"),             NULL,                            30,             3},
+        { PATH("sb-packages"),          PATH("sb-packages_button"),      0,              1},
+        { PATH("sb-volume"),            PATH("sb-volume_button"),        0,              2},
+        { PATH("sb-date"),              NULL,                            60,             3},
+        { PATH("sb-clock"),             NULL,                            30,             4},
         { NULL } /* just to mark the end of the array */
 };
