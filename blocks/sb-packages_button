@@ -3,5 +3,5 @@
 case $1 in
   1) exec "$TERMINAL" --class "blocks" -e "yay" ;;
   2) exec kill -35 $(pidof dwmblocks) ;;
-  3) exec notify-send "$(/usr/bin/checkupdates)" ;;
+  3) exec dunstify "Updates available:" "$(/usr/bin/checkupdates)" ;;
 esac

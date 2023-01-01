@@ -11,4 +11,4 @@ fi
 
 [ $(pamixer --get-mute) = true ] && printf "$out_icon 🔇" && exit
 
-printf "$out_icon $vol"
+printf "$out_icon $vol%%"
