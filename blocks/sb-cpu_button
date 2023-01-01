@@ -1,5 +1,5 @@
 #!/bin/sh
 
 case $1 in
-  1) exec "$TERMINAL" -e "htop -s PERCENT_CPU" ;;
+  1) exec "$TERMINAL" --class "blocks" -e "htop -s PERCENT_CPU" ;;
 esac

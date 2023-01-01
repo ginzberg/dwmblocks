@@ -1,5 +1,5 @@
 #! /bin/sh 
 
 case $1 in
-  1) exec "$TERMINAL" -s "htop -s PERCENT_MEM" ;;
+  1) exec "$TERMINAL" --class "blocks" -s "htop -s PERCENT_MEM" ;;
 esac
