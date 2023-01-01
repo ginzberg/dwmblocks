@@ -1,0 +1,4 @@
+#! /bin/sh 
+
+dte_date="$(date +'%b %d')"
+printf " $dte_date"

@@ -1,0 +1,14 @@
+#!/bin/sh
+
+vol="$(pamixer --get-volume)"
+sink="$(pamixer --get-default-sink)"
+
+if [ "$sink" = "alsa_output.pci-0000_2d_00.1.hdmi-stereo" ]; then
+	out_icon="蓼"
+else
+	out_icon=""
+fi
+
+[ $(pamixer --get-mute) = true ] && printf "$out_icon 🔇" && exit
+
+printf "$out_icon $vol"

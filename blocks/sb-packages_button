@@ -1,0 +1,6 @@
+#!/bin/sh
+
+case $1 in
+  1) exec "$TERMINAL" -e "yay" ;;
+  3) exec notify-send "$(/usr/bin/checkupdates)"
+esac

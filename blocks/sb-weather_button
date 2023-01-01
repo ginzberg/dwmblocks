@@ -1,0 +1,6 @@
+#!/bin/sh
+
+case $1 in
+  1) exec "$TERMINAL" -e "curl v2.wttr.in/Berkeley" ;;
+  3) exec "$TERMINAL" -e "curl v3.wttr.in/Berkeley" ;;
+esac
