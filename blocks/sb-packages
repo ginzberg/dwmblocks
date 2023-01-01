@@ -11,7 +11,8 @@ count=`checkupdates | wc -l`
 # Print them out
 
 if [ "$count" == "0" ]; then
-	printf " $count"
+	# printf " $count"
+  printf ""
 else
         printf " $count" # just this line for always
 fi
