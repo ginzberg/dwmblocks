@@ -1,4 +1,5 @@
 #! /bin/sh 
 
-dte_clock="$(date +'%I:%M %p')"
-printf " $dte_clock"
+dte_clock="$(date +'%l:%M %p')"
+# printf " $dte_clock"
+printf "$dte_clock"
