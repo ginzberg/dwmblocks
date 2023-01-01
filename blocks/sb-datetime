@@ -1,4 +1,4 @@
 #! /bin/sh 
 
-datetime="$(date +'%a %b %d %l:%M %p')"
+datetime="$(date +'%a %b %e %l:%M %p')"
 printf "$datetime"
