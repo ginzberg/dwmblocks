@@ -2,6 +2,14 @@
 case "$1" in
     1) exec "$TERMINAL" --class "blocks" -e pulsemixer ;;
     2) pamixer -t; kill -36 $(pidof dwmblocks) ;;
-    4) pamixer --allow-boost -i 1; kill -36 $(pidof dwmblocks) ;;
-    5) pamixer --allow-boost -d 1; kill -36 $(pidof dwmblocks) ;;
+    4) pamixer --allow-boost -i 3 
+       kill -36 $(pidof dwmblocks)
+       volume=$(pamixer --get-volume)
+       dunstify -r 1 "Volume: $volume%"
+       ;;
+    5) pamixer --allow-boost -d 3 
+       kill -36 $(pidof dwmblocks) 
+       volume=$(pamixer --get-volume)
+       dunstify -r 1 "Volume: $volume%"
+       ;;
 esac
