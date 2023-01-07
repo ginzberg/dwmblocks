@@ -4,8 +4,6 @@ case $1 in
   1) exec "$TERMINAL" --class "blocks" -e "yay" 
      exec kill -35 $(pidof dwmblocks)
      ;;
-  2) exec kill -35 $(pidof dwmblocks) 
-     ;;
   3) count=$(checkupdates | wc -l)
      exec dunstify "$count updates available..." "$(/usr/bin/checkupdates)"
      exec kill -35 $(pidof dwmblocks) 

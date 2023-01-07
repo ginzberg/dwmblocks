@@ -1,10 +1,9 @@
 #!/bin/bash
 
 UPDATES=$(checkupdates | wc -l)
+[[ "${UPDATES}" = "0" ]] && exit 0
 
-[[ "${UPDATES}" = "0" ]] && echo "" && kill -9 $(pidof faked) && exit 0
+echo "   ${UPDATES} "
+exit 0
 
-echo " ${UPDATES}"
-
-# this sucks
-kill -9 $(pidof faked)
+# kill -9 $(pidof faked)
