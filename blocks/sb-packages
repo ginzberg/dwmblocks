@@ -1,18 +1,10 @@
 #!/bin/bash
-# Arch upgradeable packages
 
-case $BUTTON in
-  1) "$TERMINAL" -e "yay" ;;
-  3) notify-send "$(/usr/bin/checkupdates)"
-esac
+UPDATES=$(checkupdates | wc -l)
 
-count=`checkupdates | wc -l`
+[[ "${UPDATES}" = "0" ]] && echo "" && kill -9 $(pidof faked) && exit 0
 
-# Print them out
+echo " ${UPDATES}"
 
-if [ "$count" == "0" ]; then
-	printf ""
-  # printf ""
-else
-        printf "" # just this line for always
-fi
+# this sucks
+kill -9 $(pidof faked)

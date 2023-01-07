@@ -1,13 +1,12 @@
 #!/bin/sh
 
 vol="$(pamixer --get-volume)"
-# sink="$(pamixer --get-default-sink)"
 
-# if [ "$sink" = "alsa_output.pci-0000_2d_00.1.hdmi-stereo" ]; then
-# 	out_icon="蓼"
-# else
-# 	out_icon=""
-# fi
+# make sure we get a value
+while [[ ! "$vol" =~ ^[0-9]+$ ]]
+do 
+  vol="$(pamixer --get-volume)"
+done
 
 case 1 in
 	$((vol >= 70)) ) icon="墳" ;;
@@ -16,8 +15,6 @@ case 1 in
 	* ) echo 婢 && exit ;;
 esac
 
-# out_icon=""
+[ $(pamixer --get-mute) = true ] && echo "婢" && exit
 
-[ $(pamixer --get-mute) = true ] && printf "婢" && exit
-
-printf "$icon"
+echo "$icon"
