@@ -6,7 +6,7 @@ UPDATES=$(checkupdates | wc -l)
 # echo "   ${UPDATES} "
 
 # this is terrible
-# kill -9 $(pidof faked)
-pkill -P -9 $$ 
+kill -9 $(pidof faked)
+# pkill -P -9 $$ 
 
 exit 0
